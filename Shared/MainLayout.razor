@@ -1,0 +1,39 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar style="background-color: #1f0044; elevation: 0;" Fixed="false">
+      @* <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())"></MudIconButton> *@
+      <MudIconButton Href="/"><img src="https://www.velocityrisk.com/hs-fs/hubfs/Velocity-Risk-Theme-2022/Images/Velocity_Logo_WHITE_02.gif?width=420&name=Velocity_Logo_WHITE_02.gif" alt="Velocity Risk Logo" style="width: 280px; border-width: 0px; border: 0px;"></MudIconButton>
+      <MudSpacer/>
+      <MudIconButton Href="about" style="color: #ffffff;">About Us</MudIconButton>
+      <MudIconButton Href="products" style="color: #ffffff;">Products</MudIconButton>
+      <MudIconButton Href="claims" style="color: #ffffff;">Claims</MudIconButton>
+      <MudIconButton Href="capital" style="color: #ffffff;">Capital Providers</MudIconButton>
+      <MudIconButton style="color: #ffffff;">Login</MudIconButton>
+
+    </MudAppBar>
+    @* <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">MyApplication</MudText>
+        </MudDrawerHeader>
+        <NavMenu/>
+    </MudDrawer> *@
+    <MudMainContent>
+        <MudContainer>
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}
